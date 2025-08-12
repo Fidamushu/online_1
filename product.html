@@ -10,6 +10,7 @@
         rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+
 </head>
 <body>
 
@@ -23,8 +24,8 @@
                     <ul id="MenuItems">
                           <li><a href="index.html">Home</a></li>
                         <li><a href="product.html">Product</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="/about.html">About</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
                         <li><a href="account.html">Account</a></li>
                     </ul>
                 </nav>
@@ -34,19 +35,21 @@
                 </div>
                 </div>
 
-                <div class="small-container">
-                    <div class="row row-2" >
-                        <h2> All products</h2>
-                        <select>
-                            <option>Default shorting</option>
-                            <option>short by price</option>
-                            <option>short by popularity</option>
-                            <option>short by rating</option>
-                            <option>short by sale</option>
-                        </select>
-                    </div>
-        <div class="row">
-            <div class="col-4">
+               <div class="small-container">
+    <div class="row row-2">
+        <h2>All products</h2>
+        <select>
+            <option>Default sorting</option>
+            <option>Sort by price</option>
+            <option>Sort by popularity</option>
+            <option>Sort by rating</option>
+            <option>Sort by sale</option>
+        </select>
+    </div>
+
+        <!-- Product list from JSON -->
+    <div class="row" id="product-list">
+            <!-- <div class="col-4">
                 <img src="/OIP1.jpeg">
                 <h4>red-max full-hand</h4>
                 <div class="rating">
@@ -97,14 +100,15 @@
                     <i class="fa fa-star-o"></i>
                 </div>
                 <p>$300.00</p>
-            </div>
+            </div>--->
         </div>
+
           <!------featured cat------>
 
     
 
         
-        <div class="row">
+      <div class="row" id="product-list">
             <div class="col-4">
                  <a href="product detail.html"><img src="/long1.jpeg"></a> 
                <a href="product detail.html"></a> <h4>black-and-white-long-max</h4></a>
@@ -214,15 +218,15 @@
             </div>
     
         </div>
-          <div class="page-btn">
-                <span>1</span>
-                <span>2</span>
-                <span>3</span>
-                <span>4</span>  
-                <span>&#8594;</span>
-
-            </div>
-        </div>
+          
+    <div class="page-btn">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <span>&#8594;</span>
+    </div>
+</div>
 
 <!-------------footer------->
 <div class="footer">
@@ -281,9 +285,80 @@
         }
    
     }
+    </script>
+
+
+    <!---------------------->
+ <script>
+//  async function loadProducts() {
+//     try {
+//         const response = await fetch('products.json');
+//         if (!response.ok) throw new Error('Failed to load products.json');
+//         const products = await response.json();
+//         console.log(products)
+
+//         const container = document.getElementById('product-list');
+//         container.innerHTML = ""; // clear before adding
+
+//         products.forEach(product => {
+//             container.innerHTML += `
+//                 <div class="col-4">
+//                     <img src="${product.image}" alt="${product.name}">
+//                     <h4>${product.name}</h4>
+//                     <div class="rating">${generateStars(product.rating)}</div>
+//                     <p>$${product.price.toFixed(2)}</p>
+//                 </div>
+//             `;
+//         });
+//     } catch (error) {
+//         console.error("Error loading products:", error);
+//     }
+// }
+
+fetch("product.json")
+    .then(res => res.json())
+    .then(products => {
+        console.log(products);
+ 
+        const container = document.getElementById('product-list');
+        container.innerHTML = ""; // clear before adding
+ 
+        products.forEach(product => {
+            container.innerHTML += `
+<div class="col-4">
+<img src="${product.image}" alt="${product.name}">
+<h4>${product.name}</h4>
+<div class="rating">${generateStars(product.rating)}</div>
+<p>$${product.price.toFixed(2)}</p>
+</div>
+            `;
+        });
+    })
+    .catch(err => console.error("Error loading products:", err));
+
+function generateStars(rating) {
+    let stars = '';
+    let fullStars = Math.floor(rating);
+    let halfStar = rating % 1 !== 0;
+
+    for (let i = 0; i < fullStars; i++) {
+        stars += '<i class="fa fa-star"></i>';
+    }
+    if (halfStar) {
+        stars += '<i class="fa fa-star-half-o"></i>';
+    }
+    return stars;
+}
+
+loadProducts();
+</script>
+
+
+
+
 
 
     
-</script>
+
 </body>
 </html>

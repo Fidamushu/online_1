@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Red-max full-hand",
+        "image": "/OIP1.jpeg",
+        "price": 140,
+        "rating": 4.5
+    },
+    {
+        "name": "Women's Stylish Stone Watch",
+        "image": "/watch1.jpeg",
+        "price": 200,
+        "rating": 4
+    },
+    {
+        "name": "Women's Shoe",
+        "image": "/shoe1.jpeg",
+        "price": 200,
+        "rating": 4
+    },
+    {
+        "name": "Women's Stylish Shoe",
+        "image": "/shoe2.webp",
+        "price": 300,
+        "rating": 4.5
+    }
+]
