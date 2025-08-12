@@ -90,12 +90,13 @@ p{
     padding-right: 40px;
 }
 .col-4{
-    flex-basis: 25px;
+    flex-basis: 250px;
     padding: 10px;
-    min-width: 200px;
+    min-width: 250px;
     margin-bottom: 50px;
     transform: transform 0.5s;
 }
+
 .col-4 img{
     width:100%;
 }

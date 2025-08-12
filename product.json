@@ -22,5 +22,55 @@
         "image": "/shoe2.webp",
         "price": 300,
         "rating": 4.5
+    },
+    {
+        "name": "Women's Stylish Shoe",
+        "image": "/long1.jpeg",
+        "price": 150,
+        "rating": 3
+    },
+    {
+        "name": "grey-max-full-hand",
+        "image": "/oip3.webp",
+        "price": 200.00,
+        "rating": 3
+    },
+    {
+        "name": "pakistani-suit",
+        "image": "/p2.jpg",
+        "price": 350.00,
+        "rating": 3
+    },
+    {
+        "name": "Pakistani-suit",
+        "image": "/p3.jpg",
+        "price": 450.00,
+        "rating": 3
+    },
+    {
+        "name": "womens-mens-watch",
+        "image": "/w23.jpg",
+        "price": 450.00,
+        "rating": 3
+    },
+     {
+        "name": "stone-watch",
+        "image": "/watch1.jpeg",
+        "price":250.00,
+        "rating": 3
+    },
+    {
+        "name": "diamonds-ring",
+        "image": "/r1.jpg",
+        "price":500.00,
+        "rating": 3
+    },
+     {
+        "name": "rose-gold-ring",
+        "image": "/r2.webp",
+        "price":350.00,
+        "rating": 3
     }
+
+    
 ]
